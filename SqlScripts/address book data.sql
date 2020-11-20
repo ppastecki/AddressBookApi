@@ -2,7 +2,7 @@
 go
 
 delete dbo.EmailAddress
-delete dbo.Phone
+delete dbo.PhoneNumber
 delete dbo.Address
 delete dbo.Person
 delete dbo.Country
@@ -199,7 +199,7 @@ values
 		@modifiedDate
 	)
 
-insert into dbo.Phone(PersonId, PhoneNumber, ModifiedDate)
+insert into dbo.PhoneNumber(PersonId, PhoneNumber, ModifiedDate)
 values
 	(
 		(select PersonId from dbo.Person where FirstName = 'Nancy' and LastName = 'Kapoor'),

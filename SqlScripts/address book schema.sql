@@ -44,14 +44,14 @@ create table dbo.Address
 	constraint FK_Address_Country foreign key (CountryId) references dbo.Country(CountryId)
 )
 
-create table dbo.Phone
+create table dbo.PhoneNumber
 (
-	PhoneId int identity,
+	PhoneNumberId int identity,
 	PersonId int not null,
 	PhoneNumber nvarchar(50) not null,
 	ModifiedDate datetime not null,
-	constraint PK_Phone primary key (PhoneId),
-	constraint FK_Phone_Person foreign key (PersonId) references dbo.Person(PersonId),
+	constraint PK_PhoneNumber primary key (PhoneNumberId),
+	constraint FK_PhoneNumber_Person foreign key (PersonId) references dbo.Person(PersonId),
 )
 
 create table dbo.EmailAddress
